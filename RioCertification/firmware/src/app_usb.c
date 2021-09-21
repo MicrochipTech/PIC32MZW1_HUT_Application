@@ -292,26 +292,20 @@ void APP_USB_Initialize(void) {
 
 void peripheral_application_msg_usb(unsigned char *msg)
 {
-    if(app_usbData.state == APP_USB_STATE_WAIT_FOR_CMD_RESPONSE_DONE)
-    {
-        memset(commandResponse, 0, sizeof(commandResponse));
-        if (strlen(msg) < 1024)
-        {
-            memcpy(commandResponse, msg, strlen(msg));
-        }
-        else
-            memcpy(commandResponse, msg, 1024);
-        
-        app_usbData.writeTransferHandle = USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
+    memset(commandResponse, 0, sizeof(commandResponse));
 
-        USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
-                    &app_usbData.writeTransferHandle, commandResponse, strlen((char*)commandResponse),
-                    USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);        
+    if (strlen(msg) < 1024)
+    {
+        memcpy(commandResponse, msg, strlen(msg));
     }
     else
-    {
-        printf("Msg %s in wrong state %d\n", msg, app_usbData.state);
-    }
+        memcpy(commandResponse, msg, 1024);
+        
+    app_usbData.writeTransferHandle = USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
+
+    USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
+                    &app_usbData.writeTransferHandle, commandResponse, strlen((char*)commandResponse),
+                    USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);        
 }
     
 void APP_USB_Tasks(void) {

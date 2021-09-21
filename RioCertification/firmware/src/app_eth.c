@@ -41,29 +41,22 @@ void APP_ETH_Initialize(void) {
 
 void peripheral_application_msg_eth(unsigned char *msg)
 {
-    SYS_CONSOLE_PRINT("State %d\n", app_ethData.state);
+    SYS_CONSOLE_PRINT("State %d Msg %s\n", app_ethData.state, msg);
     
-    if(app_ethData.state == ETH_APP_WAIT_FOR_CMD_RSP)
+    memset(app_ethData.cmdResponse, 0, sizeof(app_ethData.cmdResponse));
+    if (strlen(msg) < sizeof(app_ethData.cmdResponse))
     {
-        memset(app_ethData.cmdResponse, 0, sizeof(app_ethData.cmdResponse));
-        if (strlen(msg) < sizeof(app_ethData.cmdResponse))
-        {
-            memcpy(app_ethData.cmdResponse, msg, strlen(msg));
-        }
-        else
-            memcpy(app_ethData.cmdResponse, msg, sizeof(app_ethData.cmdResponse));
-
-        if(TCPIP_UDP_PutIsReady(app_ethData.tSkt))
-        {
-            TCPIP_UDP_ArrayPut(app_ethData.tSkt, app_ethData.cmdResponse, strlen(msg));
-            TCPIP_UDP_Flush(app_ethData.tSkt);
-        }
-        app_ethData.state = ETH_APP_PORT_OPEN;
+        memcpy(app_ethData.cmdResponse, msg, strlen(msg));
     }
     else
+        memcpy(app_ethData.cmdResponse, msg, sizeof(app_ethData.cmdResponse));
+
+    if(TCPIP_UDP_PutIsReady(app_ethData.tSkt))
     {
-        SYS_CONSOLE_PRINT("Msg %s in wrong state %d\n", msg, app_ethData.state);
+        TCPIP_UDP_ArrayPut(app_ethData.tSkt, app_ethData.cmdResponse, strlen(msg));
+        TCPIP_UDP_Flush(app_ethData.tSkt);
     }
+    app_ethData.state = ETH_APP_PORT_OPEN;
 }
 
 void APP_ETH_OpenSockets(void) {
