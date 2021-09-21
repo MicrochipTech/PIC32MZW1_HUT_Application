@@ -1,0 +1,6 @@
+format_version: v1.0
+type: GroupComponent
+attributes: {displayName: PWM, id: Group2}
+children:
+- type: ElementPosition
+  attributes: {x: '152', y: '61', id: Group2}

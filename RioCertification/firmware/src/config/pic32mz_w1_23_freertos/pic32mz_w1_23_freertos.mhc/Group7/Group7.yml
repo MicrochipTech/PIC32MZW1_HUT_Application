@@ -1,0 +1,6 @@
+format_version: v1.0
+type: GroupComponent
+attributes: {displayName: Crypto, id: Group7}
+children:
+- type: ElementPosition
+  attributes: {x: '413', y: '233', id: Group7}

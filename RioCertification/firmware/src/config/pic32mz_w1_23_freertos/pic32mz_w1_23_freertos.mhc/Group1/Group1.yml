@@ -1,0 +1,6 @@
+format_version: v1.0
+type: GroupComponent
+attributes: {displayName: I2C, id: Group1}
+children:
+- type: ElementPosition
+  attributes: {x: '94', y: '60', id: Group1}

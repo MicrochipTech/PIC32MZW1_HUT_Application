@@ -1,0 +1,14 @@
+configName: pic32mz_w1_23_freertos
+folderName: H3Certification-pic32mz_w1_23_freertos
+format_version: v1.0
+frameworkPath: ../../../../H3_Internal_B0
+processor: PIC32MZ1025W104132
+projectName: H3Certification-pic32mz_w1_23_freertos
+settings:
+  CMSISPath: .\dev_packs\arm\CMSIS\5.7.0
+  DFPPath: .\dev_packs\Microchip\PIC32MZ-W_DFP\1.4.193\atdf\PIC32MZ1025W104132.atdf
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  MERGE_STRATEGY: USER_ALL
+  PackageFilter: bsp;core;core_apps_pic32mz_w1;crypto;cryptoauthlib;csp;csp_apps_pic32mz_w1;net;quick_docs;touch;touch_apps;usb;usb_apps_device;wireless_apps_pic32mzw1_wfi32e01;wireless_system_pic32mzw1_wfi32e01;wireless_wifi
+  TRUSTZONE: 'false'

@@ -1,0 +1,133 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: FreeRTOS}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: FREERTOS_CPU_CLOCK_HZ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: FreeRTOS, value: '200000000'}
+  - type: File
+    attributes: {id: FREERTOS_HEAP_1_C}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
+  - type: File
+    attributes: {id: FREERTOS_HEAP_3_C}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Boolean
+    attributes: {id: FREERTOS_INCLUDE_UXTASKGETSTACKHIGHWATERMARK}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: FREERTOS_INCLUDE_XTASKGETCURRENTTASKHANDLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'false'}
+  - type: Boolean
+    attributes: {id: FREERTOS_INCLUDE_XTASKGETHANDLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: FREERTOS_INCLUDE_XTASKGETIDLETASKHANDLE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Integer
+    attributes: {id: FREERTOS_MAX_TASK_NAME_LEN}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '30'}
+  - type: Combo
+    attributes: {id: FREERTOS_MEMORY_MANAGEMENT_CHOICE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Heap_3}
+  - type: Integer
+    attributes: {id: FREERTOS_PERIPHERAL_CLOCK_HZ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: FreeRTOS, value: '10000000'}
+  - type: Integer
+    attributes: {id: FREERTOS_TOTAL_HEAP_SIZE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '51200'}
+  - type: String
+    attributes: {id: FREERTOS_TRACE_FREE_FNC}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: String
+    attributes: {id: FREERTOS_TRACE_MALLOC_FNC}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+  - type: Boolean
+    attributes: {id: FREERTOS_USE_STATS_FORMATTING_FUNCTIONS}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+  - type: Boolean
+    attributes: {id: FREERTOS_USE_TRACE_FACILITY}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: 'true'}
+- type: ElementPosition
+  attributes: {x: '561', y: '20', id: FreeRTOS}
