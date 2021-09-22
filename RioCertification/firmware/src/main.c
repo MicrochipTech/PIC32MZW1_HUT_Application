@@ -65,7 +65,7 @@
 TODO( "!!!This is a dev build. Disable MODE_DEV for release!!!")
 #endif
 
-#define VERSION_NUMBER "vH3-2.3"
+#define VERSION_NUMBER "vH3-1.0"
 #define noETH_VERSION_TAG   "a"
 #define FreeRTOS_23_VERSION_TAG   "b"
 #define noETH23_VERSION_TAG   "c"
@@ -100,7 +100,7 @@ int main ( void )
     SYS_CONSOLE_PRINT(TERM_CTRL_CLRSCR);
 #endif
     
-    SYS_CONSOLE_PRINT("\r\nStarting Certification Application ("TERM_CYAN"%s %s"TERM_RESET"): " \
+    SYS_CONSOLE_PRINT("\r\nStarting Test Application ("TERM_CYAN"%s %s"TERM_RESET"): " \
                     TERM_BOLD TERM_BG_RED APP_VERSION TERM_RESET" \r\n",__DATE__, __TIME__);
     
     //print build properties related info. 

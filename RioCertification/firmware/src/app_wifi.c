@@ -34,7 +34,7 @@
 
 #define HUT_MAJOR_VERSION           2
 #define HUT_MINOR_VERSION           5
-#define HUT_PATCH_VERSION           2
+#define HUT_PATCH_VERSION           3
 static SYS_TMR_HANDLE       wifi_timer_handle = SYS_TMR_HANDLE_INVALID;      // tick handle
 #define WIFI_TIMER_TICK_RATE        1
 extern unsigned int rftm0_handler_counter;
@@ -513,29 +513,27 @@ void APP_WIFI_Tasks(void) {
             write_cal_from_flash();  
             write_gain_to_flash();
         }
-//        SYS_CONSOLE_PRINT("\n---------------------------------------------\n");
-//        SYS_CONSOLE_PRINT("RIO-2 HUT - Version = %d.%d.%d       \n",
-  //          HUT_MAJOR_VERSION, HUT_MINOR_VERSION,HUT_PATCH_VERSION);
+        SYS_CONSOLE_PRINT("\n---------------------------------------------\r\n");
+        SYS_CONSOLE_PRINT("RIO-2 HUT - Version = %d.%d.%d       \n",
+          HUT_MAJOR_VERSION, HUT_MINOR_VERSION,HUT_PATCH_VERSION);
 //        SYS_CONSOLE_PRINT("RIO-2 HUT - Version 230400 baud = 2.5.2A\n");
   //      SYS_CONSOLE_PRINT("\n----HUT code init done------------\n");
-        SYS_CONSOLE_PRINT("\r\nRIO-2 HUT - Version 230400 baud = 2.5.2A");
-        SYS_CONSOLE_PRINT("\r\n----HUT code init done------------\n");
+  //      SYS_CONSOLE_PRINT("\r\nRIO-2 HUT - Version 230400 baud = 2.5.2A");
+        SYS_CONSOLE_PRINT("\r\n----HUT code init done------------\r\n");
 
         SYS_CONSOLE_PRINT("\r\n            PMU in %s mode                      \n",
             ((PMUCMODE & 0x80000000) >> 31) ? "BUCK-PWM" : "MLDO" );
         SYS_CONSOLE_PRINT("\r            Sys Clk - 200MHz                    \n");
-        SYS_CONSOLE_PRINT("\r            Part is %s                          \n",
+        SYS_CONSOLE_PRINT("\r            Part is %s                          \r\n",
           ((((DEVID & 0x0FF00000) >> 20) == 0x8C) ? \
           (((DEVIDbits.VER) == 1) ? "SG402-A1":"SG402-A0") : "SG407-A0(B0)"));
-        SYS_CONSOLE_PRINT("\n---------------------------------------------\n");
+        SYS_CONSOLE_PRINT("\n---------------------------------------------\r\n");
 //        SYS_CONSOLE_PRINT("\r----HUT code init done------------\n");
         //SYS_CONSOLE_PRINT("[DEBUG] xtal LDO Bypass check reg 0x82=0x%x\n", wifi_spi_read(0x82));
-        SYS_CONSOLE_PRINT("Part is now in %s mode\n", ((PMUCMODE & 0x80000000) >> 31) ? "BUCK" : "MLDO" );
+        SYS_CONSOLE_PRINT("Part is now in %s mode\r\n", ((PMUCMODE & 0x80000000) >> 31) ? "BUCK" : "MLDO" );
         wifi_timer_handle = SYS_TIME_CallbackRegisterMS(_WIFI_TickHandler, 0, 
                                 WIFI_TIMER_TICK_RATE, SYS_TIME_PERIODIC);
         
-        SYS_CONSOLE_PRINT("timer handler %x for %d ms\n", wifi_timer_handle, WIFI_TIMER_TICK_RATE);
-
         once = 1;
     }
     {
