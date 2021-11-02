@@ -3607,7 +3607,16 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 4.096 s}
+        attributes: {id: core, value: 4.0 s}
+  - type: Integer
+    attributes: {id: WDT_CLOCK_FREQUENCY}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
   - type: Comment
     attributes: {id: WDT_CONFIG_COMMENT}
     children:
@@ -3665,7 +3674,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 16.384 s}
+        attributes: {id: core, value: 16.0 s}
   - type: String
     attributes: {id: WDT_TIMEOUT_PERIOD_SLEEP}
     children:

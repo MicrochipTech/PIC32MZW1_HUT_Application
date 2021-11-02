@@ -1266,13 +1266,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 62951755A45BA873C9775C77F461A8DF
-- generatedChecksum: 635CA70046FDC9459C1450828514AF09
+- generatedChecksum: 8DA49CBBFD98933665336E3C9729215B
   logicalPath: config/pic32mz_w1_23_freertos
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 8DCEBEAAD8BF4BEBB859672EB2B59E7C
+  userChecksum: F8C6CBB825228F91397E803B5CA46BBB
 - generatedChecksum: 479A727027F5AD9CBBDC717FD86D8B5E
   logicalPath: wolfcrypt
   name: integer.c
@@ -1286,7 +1286,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7EDFD9B0E91C9F102ABA075801FC6BDB
+  userChecksum: F0B19F3E03CAE787D78106993A990914
 - generatedChecksum: A72F2AADD5C4B9D163986E9D92D9BD90
   logicalPath: config/pic32mz_w1_23_freertos
   name: interrupts_a.S
@@ -1420,13 +1420,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0DA10C8889278A796D0EE4C6096B57C3
-- generatedChecksum: 3CABA42D411772090AC212DB4325EA45
+- generatedChecksum: 4867C9876BD5DF97E009C3F34FE5CDEE
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/clk
   name: plib_clk.c
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3CABA42D411772090AC212DB4325EA45
+  userChecksum: 4867C9876BD5DF97E009C3F34FE5CDEE
 - generatedChecksum: 2FEFEA0D4E94F5A5F3D76BAEC3D602E5
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/coretimer
   name: plib_coretimer.c
@@ -1490,20 +1490,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: EC50B7E9E113B9803CC349B46F71D862
-- generatedChecksum: 45DCEF7AAB178A6AC21DC2CFCB79A2AF
+- generatedChecksum: CA7F2C954C9E5F7F34F3A3E6EC1E3932
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/spi/spi_master
   name: plib_spi1_master.c
   physicalPath: peripheral/spi/spi_master
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 45DCEF7AAB178A6AC21DC2CFCB79A2AF
-- generatedChecksum: 7E93197F5D55B2C343E60BC3E6F720FE
+  userChecksum: CA7F2C954C9E5F7F34F3A3E6EC1E3932
+- generatedChecksum: FE6F2F74AFE98FC660A9FB43F4351E3B
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/spi/spi_master
   name: plib_spi2_master.c
   physicalPath: peripheral/spi/spi_master
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7E93197F5D55B2C343E60BC3E6F720FE
+  userChecksum: FE6F2F74AFE98FC660A9FB43F4351E3B
 - generatedChecksum: E6F937E675FE96DA003891DEA2BD17A4
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/tmr
   name: plib_tmr2.c
@@ -1539,6 +1539,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 8C6E1D4EEB7D704E9F4035EA94081DF2
+- generatedChecksum: 290251D6FF0845DC4259E0EF74DCB657
+  logicalPath: config/pic32mz_w1_23_freertos
+  name: pmu_init.c
+  physicalPath: ''
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 290251D6FF0845DC4259E0EF74DCB657
 - generatedChecksum: BE4CB7367E5A5B3DDA671207F469CA45
   logicalPath: wolfcrypt
   name: poly1305.c
@@ -1762,7 +1769,7 @@ files:
   physicalPath: system/command/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B272B2EB06FC4376B9EEB88671E27D74
+  userChecksum: 63E5C925943A8B884D392159A577B2C3
 - generatedChecksum: 20C22A19D5DC74DEBFC4CCCA83B6F603
   logicalPath: config/pic32mz_w1_23_freertos/system/console
   name: sys_console.c
@@ -1847,13 +1854,6 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: F849420C740D2B32346B4B4D9F46C136
-- generatedChecksum: 9A49A2339A0774ACCBC2178A9EE76586
-  logicalPath: config/pic32mz_w1_23_freertos
-  name: system_pmu_mldo_trim.c
-  physicalPath: ''
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: 9A49A2339A0774ACCBC2178A9EE76586
 - generatedChecksum: 90C428C14EF70429273CB246F323F08C
   logicalPath: config/pic32mz_w1_23_freertos
   name: tasks.c
@@ -1874,7 +1874,7 @@ files:
   physicalPath: library/tcpip/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9C582CD50826BA6B41D456A04C26D0B1
+  userChecksum: E7EFB80EA38A08BE71AA1AF737B4FF11
 - generatedChecksum: 0911DB28A8AA8D2EDEC039BD1BA1CED1
   logicalPath: config/pic32mz_w1_23_freertos/library/tcpip/src
   name: tcpip_heap_alloc.c
@@ -3800,13 +3800,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 3D2558D7758EF020BBF792820203C0A2
-- generatedChecksum: 9238A3759A2C6748FE493370DE35B5E0
+- generatedChecksum: F4C7B8A950B1D12FF6EC959D0A996B5B
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/clk
   name: plib_clk.h
   physicalPath: peripheral/clk
   security: NON_SECURE
   type: HEADER
-  userChecksum: 9238A3759A2C6748FE493370DE35B5E0
+  userChecksum: F4C7B8A950B1D12FF6EC959D0A996B5B
 - generatedChecksum: 49EF1C56EBDEE25C8E46F029F020AB21
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/coretimer
   name: plib_coretimer.h
@@ -3821,13 +3821,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 2B5072810107E051495C4B6379DEDA4E
-- generatedChecksum: CE11C733CFC182BBADE1A6C0D1F6239D
+- generatedChecksum: EED3F51BBDCD2EB6F6736313085228A4
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/gpio
   name: plib_gpio.h
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: HEADER
-  userChecksum: CE11C733CFC182BBADE1A6C0D1F6239D
+  userChecksum: EED3F51BBDCD2EB6F6736313085228A4
 - generatedChecksum: 407D8CE5F0C091BCEBB78967FECBE53E
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/i2c/master
   name: plib_i2c1_master.h
@@ -3884,20 +3884,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 1D449E8D53692CBFFD05CBDCFD545665
-- generatedChecksum: 8B538ED26B7B1F9177E6F490AAE66B57
+- generatedChecksum: A9C21E81CB403E638EEB811A7780088B
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/spi/spi_master
   name: plib_spi1_master.h
   physicalPath: peripheral/spi/spi_master
   security: NON_SECURE
   type: HEADER
-  userChecksum: 8B538ED26B7B1F9177E6F490AAE66B57
-- generatedChecksum: A49DF9975AD635E363B13B53F58639DB
+  userChecksum: A9C21E81CB403E638EEB811A7780088B
+- generatedChecksum: DD36DE6ACD8AE29EFBB17C8C6B4E962E
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/spi/spi_master
   name: plib_spi2_master.h
   physicalPath: peripheral/spi/spi_master
   security: NON_SECURE
   type: HEADER
-  userChecksum: A49DF9975AD635E363B13B53F58639DB
+  userChecksum: DD36DE6ACD8AE29EFBB17C8C6B4E962E
 - generatedChecksum: CFA758C8B7258190473EF7C60C4BA4E9
   logicalPath: config/pic32mz_w1_23_freertos/peripheral/spi/spi_master
   name: plib_spi_master_common.h
@@ -4268,7 +4268,7 @@ files:
   physicalPath: system/command
   security: NON_SECURE
   type: HEADER
-  userChecksum: CD4D57FA548C4424287C649841CA2843
+  userChecksum: DF5A4C68C8804D58FB2130944D3F1E31
 - generatedChecksum: 91CB36F6EC29DAA7C584282A875E5CBA
   logicalPath: config/pic32mz_w1_23_freertos/system/console
   name: sys_console.h
@@ -4724,13 +4724,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: B82914256F44A8612BFB1CDF0ED5EEB0
-- generatedChecksum: FA212DEAE39D4E86EF4E6CB440610FE9
+- generatedChecksum: CAC44960D20AEC03CF4B325A1CD2877C
   logicalPath: config/pic32mz_w1_23_freertos
   name: toolchain_specifics.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: FA212DEAE39D4E86EF4E6CB440610FE9
+  userChecksum: CAC44960D20AEC03CF4B325A1CD2877C
 - generatedChecksum: 10166DC32FEFFFA0E254AEE67353C90F
   logicalPath: config/pic32mz_w1_23_freertos/touch
   name: touch.h
@@ -5907,7 +5907,7 @@ settings:
   delimiter: ;
   key: extra-include-directories
   security: NON_SECURE
-  value: ../src;../src/config/pic32mz_w1_23_freertos;../src/packs/PIC32MZ1025W104132_DFP;
+  value: ../src;../src/config/pic32mz_w1_23_freertos;
 - append: false
   category: C32
   delimiter: ''
@@ -5967,7 +5967,7 @@ settings:
   delimiter: ;
   key: extra-include-directories
   security: NON_SECURE
-  value: ../src;../src/config/pic32mz_w1_23_freertos;../src/packs/PIC32MZ1025W104132_DFP;
+  value: ../src;../src/config/pic32mz_w1_23_freertos;
 - append: false
   category: C32CPP
   delimiter: ''

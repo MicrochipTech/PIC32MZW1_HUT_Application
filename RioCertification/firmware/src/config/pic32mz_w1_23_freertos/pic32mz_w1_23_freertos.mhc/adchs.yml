@@ -374,6 +374,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: adchs, value: '14.705882'}
+  - type: String
+    attributes: {id: ADCHS_DMA_STATUS_REG}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: adchs, value: ADCDMAST}
   - type: Float
     attributes: {id: ADCHS_TADC0}
     children:
