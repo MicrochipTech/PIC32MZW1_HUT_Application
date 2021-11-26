@@ -1130,7 +1130,6 @@
       <itemPath>../src/app_control.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app_touch.c</itemPath>
-      <itemPath>../src/app_flash_otp.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
