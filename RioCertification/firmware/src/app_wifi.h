@@ -55,34 +55,8 @@ extern "C" {
         NONE
     } WIFI_AUTH;
     
-extern char* WIFI_AUTH_STRING[];
-
-#if defined(MODE_RELEASE)
-#define DEFAULT_SSID "DEMO_AP_RIO2"
-#define DEFAULT_SSID_PSK " "
-#define DEFAULT_AUTH_MODE (WIFI_AUTH)OPEN
-#elif defined(MODE_DEV)
-#define DEFAULT_SSID "DEMO_AP_RIO2"
-#define DEFAULT_SSID_PSK " "
-#define DEFAULT_AUTH_MODE (WIFI_AUTH)OPEN
-#endif 
 
 #define WIFI_DEFAULT_REG_DOMAIN "GEN"
-
-    typedef enum {
-        /* Application's state machine's initial state. */
-        APP_WIFI_STATE_INIT = 0,
-        APP_WIFI_STATE_WDRV_INIT_READY,
-        APP_WIFI_STATE_SET_REG_DOMAIN,
-        APP_WIFI_STATE_WAIT_SET_REG_DOMAIN,
-        APP_WIFI_TCPIP_WAIT_FOR_TCPIP_INIT,
-        APP_WIFI_TCPIP_ERROR,
-        APP_WIFI_CONFIG,
-        APP_WIFI_CONNECT,
-        APP_WIFI_IDLE,
-        APP_WIFI_RECONNECT,
-        APP_NO_WIFI_IDLE,
-    } APP_WIFI_STATES;
 
     void APP_WIFI_Initialize(void);
     void APP_WIFI_Tasks(void);

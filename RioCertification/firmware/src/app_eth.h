@@ -36,7 +36,7 @@ extern "C" {
 
 #endif
 
-    #define TCPIP_HUT_REMOTE_IP_ADDR "192.168.5.3"
+    #define TCPIP_HUT_REMOTE_IP_ADDR "255.255.255.255"
     #define TCPIP_HUT_LOCAL_SERVER_PORT 8000
     #define TCPIP_HUT_REMOTE_SERVER_PORT 8000
 

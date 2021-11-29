@@ -34,7 +34,7 @@
 #define RAND_UPPER 255
 #define RAND_LOWER 50
 
-extern unsigned int hut_peripheral;
+extern HUT_MODE hut_peripheral;
 
 APP_USB_DATA app_usbData;
 
@@ -419,7 +419,7 @@ void APP_USB_Tasks(void) {
                 /* Set hut_peripheral to 2 which indicates command
                  * was received over USB.
                  */
-                hut_peripheral = 2;
+                hut_peripheral = HUT_MODE_USB;
                 hut_application_input_cmd(app_usbData.cdcReadBuffer, strlen(app_usbData.cdcReadBuffer));
             }
 

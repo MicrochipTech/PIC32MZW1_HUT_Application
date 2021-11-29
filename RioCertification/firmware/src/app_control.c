@@ -42,7 +42,7 @@
 #define APP_BOOLSTRING(X) X?TERM_RED"Fail"TERM_RESET:TERM_GREEN"Pass"TERM_RESET
 
 APP_CONTROL_DATA app_controlData;
-extern unsigned int hut_peripheral;
+extern HUT_MODE hut_peripheral;
 
 static void populate_buffer(uint32_t* writeData, const char* ssid, const char* pass, uint32_t authMode, char* regDomain) {
     CONFIG_DATA data;
@@ -325,7 +325,7 @@ static void iconfigCommands(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) 
 
     iconfig_command_counter++;    
     
-	hut_peripheral = 1;
+	hut_peripheral = HUT_MODE_UART;
 	
     hut_application_input_cmd(command, strlen(command) + 1);
 }

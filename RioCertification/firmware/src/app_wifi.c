@@ -587,20 +587,20 @@ void MAC_Interrupt_disable(){
     IEC2bits.RFMACIE = 0; //Enable MAC ISR
 }
 
-unsigned int hut_peripheral = 0;
+HUT_MODE hut_peripheral = 0;
 
 void hut_application_msg(unsigned char *msg)
 {
 //    SYS_CONSOLE_PRINT("hut_application_msg: %d for peripheral %d\n", strlen(msg), hut_peripheral);
-    if(hut_peripheral == 1)
+    if(hut_peripheral == HUT_MODE_UART)
     {
         SYS_CONSOLE_PRINT(msg);
     }
-    else if (hut_peripheral == 2)
+    else if (hut_peripheral == HUT_MODE_USB)
     {
         peripheral_application_msg_usb(msg);        
     }
-    else if (hut_peripheral == 3)
+    else if (hut_peripheral == HUT_MODE_ETH)
     {
         peripheral_application_msg_eth(msg);        
     }

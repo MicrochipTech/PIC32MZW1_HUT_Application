@@ -45,6 +45,13 @@ extern "C" {
 
 typedef enum
 {
+    HUT_MODE_UART = 1,
+    HUT_MODE_USB,
+    HUT_MODE_ETH
+} HUT_MODE;
+
+typedef enum
+{
     APP_CONTROL_STATE_INIT=0,
     APP_CONTROL_STATE_SERVICE_TASKS,
     APP_CONTROL_STATE_ERROR

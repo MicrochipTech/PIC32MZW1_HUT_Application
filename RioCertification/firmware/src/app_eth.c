@@ -30,7 +30,7 @@
 #include "app_eth.h"
 #include "definitions.h"
 
-extern unsigned int hut_peripheral;
+extern HUT_MODE hut_peripheral;
 
 APP_ETH_DATA app_ethData;
 
@@ -156,7 +156,7 @@ void APP_ETH_Tasks(void) {
 			{
 		        TCPIP_UDP_ArrayGet(app_ethData.uSkt,app_ethData.cmdBuffer,buffsize);
 				SYS_CONSOLE_PRINT("Cmd %s received\n", app_ethData.cmdBuffer);
-                hut_peripheral = 3;
+                hut_peripheral = HUT_MODE_ETH;
     			app_ethData.state = ETH_APP_WAIT_FOR_CMD_RSP;
                 hut_application_input_cmd(app_ethData.cmdBuffer, buffsize);
                 memset(app_ethData.cmdBuffer, 0, sizeof(app_ethData.cmdBuffer));
