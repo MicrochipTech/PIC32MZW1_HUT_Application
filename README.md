@@ -153,11 +153,11 @@ This command is used to get the Base Tx Gain Index value from the memory. It is 
 
 # Power Calculation
 
-Formula for calculating TX_Gain_index is “gain_index = BaseGainIndex + RateOffset - (BaseTXP – desired_txp) * 4 + channel offset”
+Formula for calculating TX_Gain_index is “TX_Gain_index = BaseGainIndex + RateOffset - (BaseTXP – desired_txp) * 4 + channel_offset”
 
 The TX_Gain_index value can be calculated using the above formula and the values provided in the below tables.
 
-After the TX_Gain_index has been calculated, it needs to be provided as an input to the “iconfig –starttx command”.
+After the TX_Gain_index has been calculated, it needs to be provided as an input to the “iconfig –starttx" command.
 
 ![image](https://user-images.githubusercontent.com/47098770/143814718-ac9038ef-d2c9-496a-9c88-95fd79100a7d.png)
 
