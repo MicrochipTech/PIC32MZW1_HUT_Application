@@ -29,3 +29,100 @@ Below is a list of responses that will be sent by HUT library for a command rece
 * RX_PKT_CLEARED
 * RX_STOP_DONE
 * INVALID_CMD_FORMAT
+
+# COMMAND LIST
+
+## Command to start modulated transmission (iconfig --starttx)
+
+iconfig --starttx "Channel" "Rate" "Duration" "Rate_type" "Antenna" "Power" "SecChOffset" "SecChPos" "IsshortGI/Preamble" "FrameLen" "ResetPhyRf" "EnableCCA"
+        :- Starts modulated Transmission where:-
+  * Channel : Transmission channel number
+  * Rate : Data rates (1, 2, 5, 6, 9, 11, 12, 18, 24, 36, 48, 54 Mbps or 0 to 7 if its MCS rates)
+  * Duration : Duration of transmission in Seconds. Valid values are from 1 to 9999.  9999 option will be used for continuous transmission for up to 9999 seconds. This will work based on TSF timestamps to check the time upper limit and duration values are met with an close approximation to stop the transmission when the target time duration is met and all the transmission variables reset and RF mode standby.
+  * Rate_type : 1 for MCS rates; Default->0 for legacy
+  * Antenna : 1 - CONN1 and 2 - CONN2 (Not used in Rio2 but need to enter to succeed the command)
+  * Power: Check the section on how "Power Calculation" is done.
+  * SecChOffset : 0 -> 20MHz; 1 -> Secondary channel will be above primary channel; 3-> Secondary channel will be below primary channel
+  * SecChPos : 2 -> 20MHz operation (no offset) and 0 -> full 40MHz band; 1 -> upper 20MHz 3 -> lower 20MHz
+  * IsshortGI/Preamble : 0 -> long; 1-> short. GI: GI option 0 -> Long guard interval, GI option 1 -> Short guard interval (SGI). Preamble: 0 -> Long preamble, 1 -> short preamble
+  * FrameLen : Frame length in bytes
+  * ResetPhyRf : Flags for resetting PHY, RF and triggering RF Calibration before Tx or Rx
+  * EnableCCA: If set, this will enable CCA while the transmissions. This option is mainly used for Adaptivity tests. If clear, this will disable CCA.
+
+### Command Usage Example:
+
+To start Tx on channel 9 with MCS 7 rate:
+  * iconfig --starttx 9 7 9999 1 2 0 0 2 0 500 0 0
+
+TX_TEST_STARTED is the last response seen on the console
+
+## Command to stop the ongoing transmission (iconfig --stoptx)
+
+iconfig --stoptx
+        :-Stops Transmission
+
+### Command Usage Example:
+  
+  * iconfig --stoptx
+
+TX_STOP_DONE is the last response seenon the console.
+
+## Command to start an unmodulated tone transmission (iconfig --starttone)
+  
+iconfig --starttone "channel" "incr_ptr" "GainIdx"
+  :- Starts un-modulated Carrier Transmission
+  
+  * incr_ptr: -28 ~28     default 0 . ie for center frequency
+  * GainIdx:   Range 0-255, Default   66 
+  
+  incr_ptr and GainIdx are optional but needs to be given together as mentioned below.
+
+### Command Usage Example:
+  
+  * iconfig --starttone 11 4 66
+  OR 
+  * iconfig --starttone 11
+
+TX_TONE_STARTED is the last console message
+
+## Command to stop the transmission of unmodulated tone (iconfig --stoptone)
+
+iconfig --stoptone
+  :- Stops un-modulated Carrier Transmission
+
+### Command Usage Example:
+* iconfig --stoptone
+
+TX_TONE_STOPED is the last console message
+
+## Command to start receiving on given channel and start collecting Rx statistics (iconfig --startrx)
+
+iconfig --startrx "Channel" "SecChOffset" "Antenna" "ResetPhyRf"
+  :-Puts device in Rx mode in the given channel and starts collecting Rx statistics.
+
+### Command Usage Example:
+* iconfig --startrx 6 0 2 0
+
+RX_PKT_CLEARED
+RX_TEST_STARTED are the last console messages
+
+## Command to stop reception and clear the Rx statistics (iconfig --stoprx)
+
+iconfig --stoprx
+  :-Stops Reception
+
+### Command Usage Example:
+* iconfig --stoprx
+
+RX_STOP_DONE is the last console messsage
+
+## Command to get Rx statistics (iconfig --rxpktcount)
+
+iconfig --rxpktcount "Rate" "Rate_type"
+  :- Displays the TOTAL and CRC SUCCESS packets
+
+### Command Usage Example:
+
+To print Rx statistics for all the data rates:
+* iconfig --rxpktcount 0 0
+
