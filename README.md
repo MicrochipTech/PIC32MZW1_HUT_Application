@@ -126,3 +126,19 @@ iconfig --rxpktcount "Rate" "Rate_type"
 To print Rx statistics for all the data rates:
 * iconfig --rxpktcount 0 0
 
+## Command to clear the Rx statistics (iconfig --rxpktcountclear)
+
+iconfig --rxpktcountclear
+   :- Clears Rx statistics
+
+### Command Usage Example:
+
+* iconfig --rxpktcountclear
+
+RX_PKT_CLEARED is the last console message
+
+## Command to reset the system and fresh boot (iconfig --reset)
+
+### Command Usage Example:
+
+* iconfig --reset
