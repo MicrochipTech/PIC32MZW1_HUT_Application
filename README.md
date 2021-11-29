@@ -150,3 +150,25 @@ This command is used to get the Base Tx Gain Index value from the memory. It is 
 ### Command Usage Example:
 
 * iconfig --printBaseTxGainIndex
+
+# Power Calculation
+
+Formula for calculating TX_Gain_index is “gain_index = BaseGainIndex + RateOffset - (BaseTXP – desired_txp) * 4 + channel offset”
+
+The TX_Gain_index value can be calculated using the above formula and the values provided in the below tables.
+
+After the TX_Gain_index has been calculated, it needs to be provided as an input to the “iconfig –starttx command”.
+
+![image](https://user-images.githubusercontent.com/47098770/143814718-ac9038ef-d2c9-496a-9c88-95fd79100a7d.png)
+
+![image](https://user-images.githubusercontent.com/47098770/143814584-46edb3e7-97a8-47d8-bc01-09977e870623.png)
+
+![image](https://user-images.githubusercontent.com/47098770/143814618-4ce19b29-e1c2-4e09-87c5-9c14ab0b7f0b.png)
+
+A typical test flow during certification will be as follows:
+
+* Customer (End product Certification requirements) decides on the desired transmit power.
+* Based on that, they calculate the gain index value using the formula provided above.
+* Now they use this gain index with starttx to do the test and test for certification requirements (The calculated value is provided as the value for the "power" parameter in the iconfig --starttx command).
+
+
