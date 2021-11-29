@@ -142,3 +142,11 @@ RX_PKT_CLEARED is the last console message
 ### Command Usage Example:
 
 * iconfig --reset
+
+## Command to get the Base Tx Gain Index (iconfig --printBaseTxGainIndex)
+
+This command is used to get the Base Tx Gain Index value from the memory. It is required for power calculation purposes.
+
+### Command Usage Example:
+
+* iconfig --printBaseTxGainIndex
