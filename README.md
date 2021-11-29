@@ -30,7 +30,7 @@ Below is a list of responses that will be sent by HUT library for a command rece
 * RX_STOP_DONE
 * INVALID_CMD_FORMAT
 
-# COMMAND LIST
+# List of commands required for Certification
 
 ## Command to start modulated transmission (iconfig --starttx)
 
