@@ -190,4 +190,7 @@ The DUT response to any command received from the host by sending a packet to th
 
 ![image](https://user-images.githubusercontent.com/47098770/144002847-8d2e941a-3f5f-41e8-b667-f3985f59eec0.png)
 
+Below is the sample output from the receive.py script when the command "iconfig --rxpktcount 0 0" is given:
+
+![image](https://user-images.githubusercontent.com/47098770/144012015-fff0e550-e4d7-4100-ae62-0285cf003167.png)
 
