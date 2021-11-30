@@ -175,4 +175,14 @@ A typical test flow during certification will be as follows:
 * Based on that, they calculate the gain index value using the formula provided above.
 * Now they use this gain index with starttx to do the test and test for certification requirements (The calculated value is provided as the value for the "power" parameter in the iconfig --starttx command).
 
+# Interface Specific Notes
+
+## Ethernet
+
+The firmware has DHCP Server enabled by default. The IP address assigned to the DUT is 192.168.5.1. When the test device (for ex. laptop) is connected via Ethernet cable to the DUT, it will be assigned an IP address by the DHCP Server running on the DUT. Connectivity to the DUT can be tested by running a ping to 192.168.5.1 from the laptop.
+
+Once the IP has been assigned to the laptop, scripts can be written on the laptop to trigger the RF tests. The validation was done using a utility like "Packet Sender" to send the command to the DUT from the laptop. A sample screenshot is given below for "iconfig --startrx" command:
+
+
+![image](https://user-images.githubusercontent.com/47098770/144002467-de96c185-0622-4fbb-87be-9954707eaa26.png)
 
