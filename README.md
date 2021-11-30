@@ -151,7 +151,7 @@ This command is used to get the Base Tx Gain Index value from the memory. It is 
 
 * iconfig --printBaseTxGainIndex
 
-baseTxGainIndex <number> is the response. <number> printed will be used in transmit power calculations. Check the "Power Calculation" section to see how it is used.
+baseTxGainIndex "number" is the response. "number" printed will be used in transmit power calculations. Check the "Power Calculation" section to see how it is used.
 
 # Power Calculation
 
