@@ -32,7 +32,7 @@ The above API will be invoked by the HUT library to send a response to the custo
 By default the above function invokes SYS_CONSOLE_PRINT and passes the msg received to that function.
 There is a global variable (hut_peripheral) provided to set the peripheral type being used. Value of HUT_MODE_UART indicates UART, value of  HUT_MODE_USB indicates USB and value of  HUT_MODE_ETH indicates Ethernet. Hut_peripheral can be automatically set to the peripheral type depending on which interface the command is received from. For ex. app_usb.c sets hut_peripheral to 2 just before passing the command to the HUT library via hut_application_input_cmd. Similarly iconfigCommands sets it to HUT_MODE_UART whenever a command is received over UART and hut_peripheral is set to HUT_MODE_ETH in app_eth.c just before passing the command to the Module RF Test Library via hut_application_input_cmd.
 
-Below is a list of responses that will be sent by Module RF Cert Test library for a command received by it i.e. msg passed in hut_application_msg API will point to one of the below strings:
+Below is a list of responses that will be sent by Module RF Cert Test library for a command received by it i.e. msg passed in hut_application_msg API will point to one of the below strings (To find out which string is sent as response to which command, please refer to the section "List of commands required for Certification":
 * TX_TEST_STARTED
 * TX_TEST_DONE
 * TX_TONE_STARTED
