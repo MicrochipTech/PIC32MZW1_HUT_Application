@@ -50,6 +50,11 @@ Following response can come for "iconfig --rxpktcount 0 0" command (bytes betwee
 
 ![image](https://user-images.githubusercontent.com/47098770/144015235-ecc16d22-3c0e-4d2d-8b24-5d932febacc8.png)
 
+Following response can come for "iconfig --rxpktcount 1 0" command (bytes between the ' '):
+
+![image](https://user-images.githubusercontent.com/47098770/144015656-42dd0964-380c-4a81-b19e-4e57e6382b12.png)
+
+
 # List of commands required for Certification
 
 ## Command to start modulated transmission (iconfig --starttx)
@@ -145,6 +150,9 @@ iconfig --rxpktcount "Rate" "Rate_type"
 
 To print Rx statistics for all the data rates:
 * iconfig --rxpktcount 0 0
+
+To print Rx statistics for 1 Mbps:
+* iconfig --rxpktcount 1 0
 
 ## Command to clear the Rx statistics (iconfig --rxpktcountclear)
 
