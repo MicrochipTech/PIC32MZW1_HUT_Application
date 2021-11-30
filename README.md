@@ -30,8 +30,9 @@ Code similar to above needs to be written if the functionality needs to be imple
 
 The above API will be invoked by the HUT library to send a response to the customer application for a command sent by the customer application.
 By default the above function invokes SYS_CONSOLE_PRINT and passes the msg received to that function.
-There is a global variable (hut_peripheral) provided to set the peripheral type being used. Value of 1 indicates UART, value of 2 indicates USB and value of 3 indicates Ethernet. Hut_peripheral can be automatically set to the peripheral type depending on which interface the command is received from. For ex. app_usb.c sets hut_peripheral to 2 just before passing the command to the HUT library via hut_application_input_cmd. Similarly iconfigCommands sets it to 1 whenever a command is received over UART and hut_peripheral is set to 3 in app_eth.c just before passing the command to the HUT library via hut_application_input_cmd.
-Below is a list of responses that will be sent by HUT library for a command received by it i.e. msg passed in hut_application_msg API will point to one of the below strings:
+There is a global variable (hut_peripheral) provided to set the peripheral type being used. Value of HUT_MODE_UART indicates UART, value of  HUT_MODE_USB indicates USB and value of  HUT_MODE_ETH indicates Ethernet. Hut_peripheral can be automatically set to the peripheral type depending on which interface the command is received from. For ex. app_usb.c sets hut_peripheral to 2 just before passing the command to the HUT library via hut_application_input_cmd. Similarly iconfigCommands sets it to HUT_MODE_UART whenever a command is received over UART and hut_peripheral is set to HUT_MODE_ETH in app_eth.c just before passing the command to the Module RF Test Library via hut_application_input_cmd.
+
+Below is a list of responses that will be sent by Module RF Cert Test library for a command received by it i.e. msg passed in hut_application_msg API will point to one of the below strings:
 * TX_TEST_STARTED
 * TX_TEST_DONE
 * TX_TONE_STARTED
@@ -40,6 +41,14 @@ Below is a list of responses that will be sent by HUT library for a command rece
 * RX_PKT_CLEARED
 * RX_STOP_DONE
 * INVALID_CMD_FORMAT
+
+In addition to the above, following response can come for "iconfig --printBaseTxGainIndex" command:
+
+* baseTxGainIndex "number"
+
+Following response can come for "iconfig --rxpktcount 0 0" command (bytes between the ' '):
+
+![image](https://user-images.githubusercontent.com/47098770/144015235-ecc16d22-3c0e-4d2d-8b24-5d932febacc8.png)
 
 # List of commands required for Certification
 
