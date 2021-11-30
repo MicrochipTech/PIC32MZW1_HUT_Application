@@ -15,7 +15,7 @@ The above function will store the command provided in global array (g_string) an
 Each command given to the HUT library will be responded with a response. The customer application should not give another command to the HUT library till the response for the previous command has been received. The response to the command would be provided via the hut_application_msg function.
 It is the customer application responsibility to provide the whole command in one shot. For ex. The customer application might receive the command a single byte at a time over UART. The application would need to keep reading over UART till full command is received and then provide the command in one shot via the hut_application_input_cmd API.
 
-Below code snippet shows the following:
+Below code snippet shows the usage of the hut_application_input_cmd function when the command is received over the Ethernet interface (Code snippet is from app_eth.c file):
 * Check if bytes are received on the socket by calling TCPIP_UDP_GetIsReady
 * If some data was received, read the bytes received on the socket by calling TCPIP_UDP_ArrayGet
 * Set hut_peripheral to HUT_MODE_ETH, so that the response from the library is sent back on the same interface on which the command was received.
@@ -24,6 +24,7 @@ Below code snippet shows the following:
 
 ![image](https://user-images.githubusercontent.com/47098770/144013350-5b3efd23-78a2-4d86-8fbb-9feccf9836f2.png)
 
+Code similar to above needs to be written if the functionality needs to be implemented on another peripheral interface. Code similar to above is provided as reference for USB (app_usb.c) and UART (app_control.c) as well.
 
 ## void hut_application_msg(unsigned char *msg)
 
