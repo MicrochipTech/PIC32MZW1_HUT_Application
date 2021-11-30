@@ -15,6 +15,16 @@ The above function will store the command provided in global array (g_string) an
 Each command given to the HUT library will be responded with a response. The customer application should not give another command to the HUT library till the response for the previous command has been received. The response to the command would be provided via the hut_application_msg function.
 It is the customer application responsibility to provide the whole command in one shot. For ex. The customer application might receive the command a single byte at a time over UART. The application would need to keep reading over UART till full command is received and then provide the command in one shot via the hut_application_input_cmd API.
 
+Below code snippet shows the following:
+a) Check if bytes are received on the socket by calling TCPIP_UDP_GetIsReady
+b) If some data was received, read the bytes received on the socket by calling TCPIP_UDP_ArrayGet
+c) Set hut_peripheral to HUT_MODE_ETH, so that the response from the library is sent back on the same interface on which the command was received.
+d) Pass the received bytes to the Module Test RF Library by invoking hut_application_input_cmd
+e) Reset the cmdBuffer to 0.
+
+![image](https://user-images.githubusercontent.com/47098770/144013350-5b3efd23-78a2-4d86-8fbb-9feccf9836f2.png)
+
+
 ## void hut_application_msg(unsigned char *msg)
 
 The above API will be invoked by the HUT library to send a response to the customer application for a command sent by the customer application.
