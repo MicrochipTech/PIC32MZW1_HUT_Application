@@ -41,7 +41,6 @@ void APP_ETH_Initialize(void) {
 
 void peripheral_application_msg_eth(unsigned char *msg)
 {    
-    SYS_CONSOLE_PRINT("State %d Msg %s\n", app_ethData.state, msg);
     memset(app_ethData.cmdResponse, 0, sizeof(app_ethData.cmdResponse));
     if (strlen(msg) < sizeof(app_ethData.cmdResponse))
     {
