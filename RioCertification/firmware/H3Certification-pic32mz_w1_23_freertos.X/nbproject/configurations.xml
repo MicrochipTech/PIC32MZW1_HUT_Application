@@ -887,6 +887,7 @@
                 <itemPath>../src/config/pic32mz_w1_23_freertos/library/tcpip/src/tcpip_manager.c</itemPath>
                 <itemPath>../src/config/pic32mz_w1_23_freertos/library/tcpip/src/tcpip_notify.c</itemPath>
                 <itemPath>../src/config/pic32mz_w1_23_freertos/library/tcpip/src/tcpip_packet.c</itemPath>
+                <itemPath>../src/config/pic32mz_w1_23_freertos/library/tcpip/src/dhcps.c</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
