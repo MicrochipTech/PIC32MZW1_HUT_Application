@@ -186,3 +186,8 @@ Once the IP has been assigned to the laptop, scripts can be written on the lapto
 
 ![image](https://user-images.githubusercontent.com/47098770/144002467-de96c185-0622-4fbb-87be-9954707eaa26.png)
 
+The DUT response to any command received from the host by sending a packet to the broadcast IP address "255.255.255.255" and port number 8000. If the host needs to process any response from the DUT (for ex. check the receive statistics), it would need to wait for a packet on port 8000 on any IP address of the laptop. The validation was done using a python script that was waiting for a packet to be received on port 8000 on any of the laptop interfaces and printing any packet received.
+
+![image](https://user-images.githubusercontent.com/47098770/144002847-8d2e941a-3f5f-41e8-b667-f3985f59eec0.png)
+
+
