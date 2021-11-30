@@ -128,12 +128,6 @@ void sys_reset(void)
 
 void process_cmd(void)
 {
-    static char buf[10];
-    static int i;
-    for(i= 0; i < 6; i++)
-    buf[i] = g_string[i];
-    buf[i] = '\0';
-
     if (shell_cmd_parser(g_string, g_counter + 1))
     {
       	hut_application_msg("\nINVALID_CMD_FORMAT");
