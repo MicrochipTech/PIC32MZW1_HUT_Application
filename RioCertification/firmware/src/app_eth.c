@@ -40,9 +40,8 @@ void APP_ETH_Initialize(void) {
 }
 
 void peripheral_application_msg_eth(unsigned char *msg)
-{
+{    
     SYS_CONSOLE_PRINT("State %d Msg %s\n", app_ethData.state, msg);
-    
     memset(app_ethData.cmdResponse, 0, sizeof(app_ethData.cmdResponse));
     if (strlen(msg) < sizeof(app_ethData.cmdResponse))
     {
@@ -155,10 +154,10 @@ void APP_ETH_Tasks(void) {
 			else
 			{
 		        TCPIP_UDP_ArrayGet(app_ethData.uSkt,app_ethData.cmdBuffer,buffsize);
-				SYS_CONSOLE_PRINT("Cmd %s received\n", app_ethData.cmdBuffer);
-                hut_peripheral = HUT_MODE_ETH;
+				SYS_CONSOLE_PRINT("Cmd %s received Length %d\n", app_ethData.cmdBuffer, buffsize);
+               	hut_peripheral = HUT_MODE_ETH;
     			app_ethData.state = ETH_APP_WAIT_FOR_CMD_RSP;
-                hut_application_input_cmd(app_ethData.cmdBuffer, buffsize);
+   	            hut_application_input_cmd(app_ethData.cmdBuffer, buffsize);
                 memset(app_ethData.cmdBuffer, 0, sizeof(app_ethData.cmdBuffer));
 			}
 			break;

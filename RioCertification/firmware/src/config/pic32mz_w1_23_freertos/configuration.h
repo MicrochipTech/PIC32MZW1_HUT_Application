@@ -222,7 +222,7 @@ extern "C" {
 #define TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX0			"0.0.0.0"
 #define TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX0			"down"
 #define TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX0			\
-													TCPIP_NETWORK_CONFIG_DHCP_CLIENT_ON |\
+													TCPIP_NETWORK_CONFIG_DHCP_SERVER_ON |\
 													TCPIP_NETWORK_CONFIG_DNS_CLIENT_ON |\
 													TCPIP_NETWORK_CONFIG_IP_STATIC
 													
@@ -244,7 +244,7 @@ extern "C" {
 #define TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX1			"0.0.0.0"
 #define TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX1			"full"
 #define TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX1			\
-													TCPIP_NETWORK_CONFIG_DHCP_CLIENT_ON |\
+													TCPIP_NETWORK_CONFIG_DHCP_SERVER_ON |\
 													TCPIP_NETWORK_CONFIG_DNS_CLIENT_ON |\
 													TCPIP_NETWORK_CONFIG_IP_STATIC
 													
@@ -412,6 +412,36 @@ extern "C" {
 
 /* Alignment for buffers that are submitted to USB Driver*/ 
 #define USB_ALIGN  CACHE_ALIGN
+
+
+/*** DHCP Server Configuration ***/
+#define TCPIP_STACK_USE_DHCP_SERVER
+#define TCPIP_DHCPS_TASK_PROCESS_RATE                               200
+#define TCPIP_DHCPS_LEASE_ENTRIES_DEFAULT                           5
+#define TCPIP_DHCPS_LEASE_SOLVED_ENTRY_TMO                          1200
+#define TCPIP_DHCPS_LEASE_REMOVED_BEFORE_ACK                        5
+#define TCPIP_DHCP_SERVER_DELETE_OLD_ENTRIES                        true
+#define TCPIP_DHCPS_LEASE_DURATION	TCPIP_DHCPS_LEASE_SOLVED_ENTRY_TMO
+
+/*** DHCP Server Instance 0 Configuration ***/
+#define TCPIP_DHCPS_DEFAULT_IP_ADDRESS_RANGE_START_IDX0             "192.168.1.100"
+
+#define TCPIP_DHCPS_DEFAULT_SERVER_IP_ADDRESS_IDX0                  "192.168.1.1"
+
+#define TCPIP_DHCPS_DEFAULT_SERVER_NETMASK_ADDRESS_IDX0             "255.255.255.0"
+
+#define TCPIP_DHCPS_DEFAULT_SERVER_GATEWAY_ADDRESS_IDX0             "192.168.1.1"
+
+#define TCPIP_DHCPS_DEFAULT_SERVER_PRIMARY_DNS_ADDRESS_IDX0         "192.168.1.1"
+
+#define TCPIP_DHCPS_DEFAULT_SERVER_SECONDARY_DNS_ADDRESS_IDX0       "192.168.1.1"
+
+#define TCPIP_DHCP_SERVER_INTERFACE_INDEX_IDX0                      0
+
+#define TCPIP_DHCP_SERVER_POOL_ENABLED_IDX0                         true
+
+
+
 
 
 /*** TCPIP Heap Configuration ***/

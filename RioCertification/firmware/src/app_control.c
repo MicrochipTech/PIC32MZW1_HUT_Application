@@ -260,48 +260,6 @@ unsigned int iconfig_command_counter;
 extern unsigned int rftm0_handler_counter;
 extern unsigned int rfmac_handler_counter;
 extern unsigned int hut_timer_handler_counter;
-extern unsigned int print_start;
-
-static void dumpmemCmd(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
-    const void* cmdIoParam = pCmdIO->cmdIoParam;
-    unsigned char count;
-    unsigned char command[512];
-    unsigned int addr;
-    unsigned int size;
-    unsigned int temp_index = 0;
-    
-    if (argc < 2) {
-        (*pCmdIO->pCmdApi->msg)(cmdIoParam, "usage: dumpmem <addr> <size>");
-        return;
-    }
-    
-    size = atoi(argv[2]);
-    
-    if(size == 0)
-    {
-        SYS_CONSOLE_PRINT("%d %d %d\n", rfmac_handler_counter, 
-                        rftm0_handler_counter, hut_timer_handler_counter);
-        SYS_CONSOLE_PRINT("%d\n", iconfig_command_counter);
-        print_start = 1;
-        return;
-    }
-    else
-        print_start = 0;
-    
-    addr = 0xBFC56000;
-    SYS_CONSOLE_PRINT("%x\n", (*((unsigned int *)(addr))));
-    SYS_CONSOLE_PRINT("%x\n", (*((unsigned int *)(0xBFC56008))));
-    
-    addr = 0;
-    
-    Parser_HexAsciiToInt(strlen(argv[1]), argv[1], (uint8_t *)&addr);
-    
-    for(temp_index = 0; temp_index < size; temp_index += 4)
-    {
-        SYS_CONSOLE_PRINT("addr: %x value: %x\n", addr + (temp_index), 
-                            *((unsigned int *)(addr + temp_index)));
-    }
-}
 
 static void iconfigCommands(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv) {
     const void* cmdIoParam = pCmdIO->cmdIoParam;
@@ -446,7 +404,6 @@ static const SYS_CMD_DESCRIPTOR ctrlCmdTbl[] = {
     {"dumppkt", dumppktCmd, ": dumppkt"},
     {"setmac", setmacCmd, ": setmac"},
     {"getmac", getmacCmd, ": getmac"},
-    {"dumpmem", dumpmemCmd, ": dumpmem"},
     {"sreset", resetCommands, ": sreset"},
 };
 
