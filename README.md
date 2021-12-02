@@ -66,7 +66,7 @@ iconfig --starttx "Channel" "Rate" "Duration" "Rate_type" "Antenna" "Power" "Sec
   * Duration : Duration of transmission in Seconds. Valid values are from 1 to 9999.  9999 option will be used for continuous transmission for up to 9999 seconds. This will work based on TSF timestamps to check the time upper limit and duration values are met with an close approximation to stop the transmission when the target time duration is met and all the transmission variables reset and RF mode standby.
   * Rate_type : 1 for MCS rates; Default->0 for legacy
   * Antenna : 1 - CONN1 and 2 - CONN2 (Not used in Rio2 but need to enter to succeed the command)
-  * Power: Check the section on how "Power Calculation" is done.
+  * Power: Check the section on how "Power Calculation" is done. The tx gain index calculated in "Power Calculation" sheet will be given as input in the Power parameter.
   * SecChOffset : 0 -> 20MHz; 1 -> Secondary channel will be above primary channel; 3-> Secondary channel will be below primary channel
   * SecChPos : 2 -> 20MHz operation (no offset) and 0 -> full 40MHz band; 1 -> upper 20MHz 3 -> lower 20MHz
   * IsshortGI/Preamble : 0 -> long; 1-> short. GI: GI option 0 -> Long guard interval, GI option 1 -> Short guard interval (SGI). Preamble: 0 -> Long preamble, 1 -> short preamble
